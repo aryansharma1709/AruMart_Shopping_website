@@ -13,9 +13,9 @@ function ProductList({products}){
       }
     </div>
       <div class="m-2 flex space-x-2 items-center">
-         <button class="border border-primary-default bg-primary-default text-white px-4 py-2">1</button>
-         <button class="border-2 border-primary-default  text-primary-default px-4 py-2">2</button>
-         <button class="border-2 border-primary-default  text-primary-default px-3 py-1 text-xl">→</button>
+         <button class="border border-primary-default hover:bg-primary-default hover:text-white px-4 py-2 text-primary-default">1</button>
+         <button class="border border-primary-default hover:bg-primary-default hover:text-white px-4 py-2 text-primary-default">2</button>
+         <button class="border-2 border-primary-default hover:bg-primary-default hover:text-white text-primary-default px-3 py-1 text-xl">→</button>
        </div>
     </>
   );

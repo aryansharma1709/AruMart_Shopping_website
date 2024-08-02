@@ -1,33 +1,34 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import ProductListPage from './ProductListPage';
 import {Routes, Route } from 'react-router-dom';
 import ProductDetail from './ProductDetail';
-import {useState} from 'react';
 import Navbar from './Navbar';
 import Footers from './Footers';
 import NotFound from './NotFound';
+import Login from './Login';
+import Sign from './Sign';
+import Forgot from './Forgot';
 function App() {
-    const dataString=localStorage.getItem("my-cart") || "{}";
-    const savedData=JSON.parse(dataString);
-  const [cart, setCart] =useState(savedData);
+  const [cart, setCart] =useState({});
    function handleAddToCart(productId,count){
      const oldCount=cart[productId] || 0;
-     const newCart={...cart, [productId]: oldCount+ count };
-     setCart(newCart);
-     const cartString=JSON.stringify(newCart);
-     localStorage.setItem("my-cart",cartString);
+     setCart({...cart,[productId]:oldCount+count});
    }
-  const totalCount=Object.keys(cart).reduce(function(previous,current){
-    return previous+cart[current];
-  },0);
+  const totalCount=useMemo(()=>{
+    return Object.keys(cart).reduce((previous,current)=>
+   previous+cart[current]
+  ,0)},[cart]);
  return(
    <>
    <div className="bg-gray-200  h-screen overflow-scroll">
-    <Navbar   productCount={totalCount} />
+    <Navbar  productCount={totalCount} />
      <div >
     <Routes>
       <Route index element={<ProductListPage/>}></Route>
       <Route path="/details/:id" element={<ProductDetail onAddToCart={handleAddToCart} />} ></Route>
+      <Route path="/login" element={<Login/>}></Route>
+      <Route path="/forgot" element={<Forgot/>}></Route>
+      <Route path="/sign" element={<Sign/>}></Route>
       <Route path="*" element={<NotFound/>}></Route>
     </Routes>
      </div>
