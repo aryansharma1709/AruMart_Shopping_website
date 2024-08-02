@@ -9,6 +9,11 @@ module.exports = {
       width:{
         15:"50px",
       },
+      height:{
+        "120":"30rem",
+        "140":"40rem",
+        
+      },
     },
   
   colors:{
