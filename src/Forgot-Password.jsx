@@ -69,7 +69,7 @@ function ForgotPassword() {
 
               <div className="flex flex-col items-center mt-4">
                 <h6 className="hover:text-primary-default cursor-pointer">
-                  <Link to="/logIn">Already have an account? <span className="hover:text-primary-default">Log in</span></Link>
+                  <Link to="/login">Already have an account? <span className="hover:text-primary-default">Log in</span></Link>
                 </h6>
                 <h6 className="hover:text-primary-default cursor-pointer">
                   <Link to="/signUp">Create an account. <span className="hover:text-primary-default">Sign up</span></Link>

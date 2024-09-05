@@ -6,12 +6,9 @@ import ProdDet from "./ProdDet";
 import ProductListPage from "./poductListPage";
 import Catalogue from "./Catalogue";
 import NotFound from './NotFound';
-import LogIn from './LogIn';
+import LogIn from "./Login";
 import ForgotPassword from './Forgot-Password';
 import SignUp from "./SignUp";
-import AuthRoute from './AuthRoute';
-import UserRoute from './UserRoute';
-
 import Alert from './Alert';
 import AlertProvider from './providers/alertProvider';
 import UserProvider from './providers/userProvider';
@@ -33,7 +30,7 @@ function App() {
               <Route index element={<ProductListPage />}/>
               <Route path="/ProdDet/:id" element={<ProdDet />}/>
               <Route path="/Catalogue" element={<Catalogue />}/>
-              <Route path="/LogIn" element={<LogIn />}/>
+              <Route path="/Login" element={<LogIn/>}/>
               <Route path="/Forgot-Password" element={<ForgotPassword />} />
               <Route path="/SignUp" element={<SignUp />} />
               <Route path="*" element={<NotFound />} />

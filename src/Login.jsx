@@ -7,7 +7,7 @@ import axios from 'axios';
 import { withAlert, withUser } from './withProvider';
 import { BiArrowBack } from 'react-icons/bi';
 
-function LogIn({ setAlert, setUser }) {
+function Login({ setAlert, setUser }) {
   const navigate = useNavigate();
 
   const callLoginApi = (values) => {
@@ -112,4 +112,4 @@ function LogIn({ setAlert, setUser }) {
   );
 }
 
-export default withAlert(withUser(LogIn));
+export default withAlert(withUser(Login));

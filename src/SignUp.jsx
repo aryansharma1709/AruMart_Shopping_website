@@ -147,7 +147,7 @@ function SignUp() {
                   <Link to="/Forgot-Password">Forgot password?</Link>
                 </h6>
                 <h6>
-                  <Link to="/logIn">
+                  <Link to="/login">
                     Already have an account?{' '}
                     <span className="hover:text-primary-default cursor-pointer">
                       Log In
