@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Dropdown from "./Dropdown";
 import SearchBar from "./SearchBar";
-import ProductList from "./productList";
+import ProductList from "./ProductList";
 import { getProductList } from "./api";
 import NoMatching from "./NoMatching";
 import Loading from "./loader";
