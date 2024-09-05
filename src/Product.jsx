@@ -1,22 +1,22 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-function Product({title, category, image ,price , discount, rating, id}) {
-   
+import { Link } from 'react-router-dom';
+
+function Product({ pic ,category, title, price, id }) {
   return (
-    <div class=" max-w-xs relative mt-2">
-      {discount>10 && (
-        <div className="absolute -top-2 -right-4 bg-primary-dark text-white text-xs font-bold rounded-full px-3 py-4">
-          {discount}% off
-        </div>
-      )}
-      <div class="w-full aspect-square"> <img class="w-full h-full object-cover" src={image}></img></div>
-       <div class="text-gray-200 text-xs">{category}</div>
-       <div class="font-sans text-sm font-semibold" >{title}</div>
-       <div class="text-primary-light text-xs">✰ ✰ ✰ ✰ ✰</div>
-       <div class="text-xs font-semibold">${price}.00</div>
-       <Link to={"/details/" + id} className="text-primary-light">View Details</Link>
+    <div className="flex flex-col bg-white border border-gray-200 rounded-md shadow-sm gap-y-2 p-4 max-w-xs hover:shadow-md  hover:shadow-primary-dark transition duration-200 ease-in-out">
+      <div className="w-full aspect-square overflow-hidden rounded-md">
+        <img src={pic} className="w-full h-full object-cover grayscale-[40%] hover:grayscale-0 " alt="Product" />
+      </div>
+      <h2 className="text-gray-500 text-xs md:text-sm lg:text-md mt-2">{category}</h2>
+      <h1 className="text-black text-xs md:text-sm lg:text-md font-semibold">{title}</h1>
+      <div className="flex space-x-1 mt-1">
+      <div class="text-primary-light text-xs">✰ ✰ ✰ ✰ ✰</div>
       
-     </div>
+      </div>
+      <div className="text-sm font-semibold mt-2">$ {price}</div>
+      <Link to={`/ProdDet/${id}`} className="text-xs text-red-600 hover:text-red-800 transition-colors duration-150">View Details...</Link>
+    </div>
   );
 }
+
 export default Product;
